@@ -15,7 +15,7 @@ pipeline {
 
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/dmancloud/complete-prodcution-e2e-pipeline'
+                git branch: 'main', credentialsId: 'jenkins-2', url: 'https://github.com/ahmadamer1610/jenkins-pipeline-project/blob/main/Jenkinsfile:'
             }
         }
     }
