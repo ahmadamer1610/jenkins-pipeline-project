@@ -13,9 +13,15 @@ pipeline {
             }
         }
 
-        stage("Checkout from SCM") {
+        stage("Build Application") {
             steps {
-                git branch: 'main', credentialsId: 'jenkins-2', url: 'https://github.com/ahmadamer1610/jenkins-pipeline-project/blob/main/Jenkinsfile:'
+                sh 'mvn clean package'
+               }
+        }
+        stage("Test Application") {
+            steps {
+                               sh 'mvn test'
+
             }
         }
     }
